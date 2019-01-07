@@ -1,0 +1,14 @@
+[Unit]
+Description=Vril API
+After=network.target
+
+[Service]
+User=vril
+WorkingDirectory=/home/vril/api
+ExecStart=/usr/bin/docker-compose up
+Restart=always
+RestartSec=500ms
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
